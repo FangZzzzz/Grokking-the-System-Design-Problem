@@ -1,8 +1,4 @@
-# 探索系统面试
-
-
-
-## 探索系统设计面试
+# 探索系统问题
 
 > 翻译自[Grokking the System Design Interview](https://www.educative.io/courses/grokking-the-system-design-interview)。
 >
