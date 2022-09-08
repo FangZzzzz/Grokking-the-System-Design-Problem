@@ -2,8 +2,6 @@
 
 ## 设计Pastebin
 
-
-
 让我们设计一个类似Pastebin的Web服务，用户可以在其中访问纯文本。该服务的用户将输入一段文本并获得一个随机生成的URL来访问它。
 
 类似服务：pastebin.com、pastebin.co、chopapp.com
@@ -153,13 +151,11 @@ deletePaste(apiDevKey, apiPasteKey)
 
 这里，'URlHash' 是 TinyURL 的 URL 等价物，'ContentKey' 是对存储粘贴内容的外部对象的引用；我们将在本章后面讨论粘贴内容的外部存储。
 
-
-
-### 7、高级设计
+### 7、总体设计（High level design ，HLD）
 
 在高层次上，我们需要一个应用层来服务所有的读写请求。应用层将与存储层对话以存储和检索数据。我们可以将我们的存储层与一个数据库隔离，该数据库存储与每个粘贴、用户等相关的元数据，而另一个将粘贴内容存储在一些对象存储中（如[Amazon S3](https://en.wikipedia.org/wiki/Amazon\_S3)）。这种数据划分也将允许我们单独扩展它们。
 
-<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption><p>高级设计</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption><p>总体设计（High level design ，HLD）</p></figcaption></figure>
 
 ### 8、组件设计
 

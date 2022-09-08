@@ -69,7 +69,7 @@
 | 总文件数    | 1000亿 |
 | 总存储量    | 10PB  |
 
-### 5、高级设计
+### 5、总体设计（High level design ，HLD）
 
 用户将指定一个文件夹作为其设备上的工作区。放置在此文件夹中的任何文件/照片/文件夹都会上传到云端，并且无论何时修改或删除文件，都会以相同的方式反映在云存储中。用户可以在他们的所有设备上指定类似的工作空间，并且在一台设备上进行的任何修改都将传播到所有其他设备，以便在任何地方都具有相同的工作空间视图。
 
@@ -77,7 +77,7 @@
 
 如下图所示，块服务器将与客户端一起从云存储上传/下载文件，元数据服务器将在 SQL 或 NoSQL 数据库中更新文件的元数据。同步服务器将处理通知所有客户端有关同步的不同更改的工作流。
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>高级设计</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>总体设计（High level design ，HLD）</p></figcaption></figure>
 
 ### 6、组件设计
 
