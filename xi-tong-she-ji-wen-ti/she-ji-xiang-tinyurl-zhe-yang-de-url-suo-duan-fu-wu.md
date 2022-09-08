@@ -184,7 +184,7 @@ deleteURL(apiDevKey, urlKey)
 \
 
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>数据库设计</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption><p>数据库设计</p></figcaption></figure>
 
 我们应该使用什么样的数据库？由于我们预计存储数10亿行，并且我们不需要使用对象之间的关系——像[DynamoDB](https://en.wikipedia.org/wiki/Amazon\_DynamoDB)、[Cassandra](https://en.wikipedia.org/wiki/Apache\_Cassandra)或[Riak](https://en.wikipedia.org/wiki/Riak)这样的NoSql存储是更好的选择。NoSQL选择也更容易扩展。有关详细信息，请参阅[SQL 与 NoSQL ](https://www.educative.io/collection/page/5668639101419520/5649050225344512/5728116278296576/)。
 
@@ -217,7 +217,7 @@ deleteURL(apiDevKey, urlKey)
 
 另一种解决方案可能是将用户 ID（应该是唯一的）附加到输入 URL。但是，如果用户尚未登录，我们将不得不要求用户选择唯一性密钥。即使在这之后，如果我们有冲突，我们必须继续生成一个密钥，直到我们得到一个唯一的。
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption><p>URL缩短请求流程</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption><p>URL缩短请求流程</p></figcaption></figure>
 
 #### b、离线生成密钥
 
@@ -245,7 +245,7 @@ KGS 还必须确保不要将相同的密钥提供给多个服务器。为此，�
 
 &#x20;我们应该对自定义别名施加大小限制吗？我们的服务支持自定义别名。用户可以选择他们喜欢的任何“密钥”，但提供自定义别名不是强制性的。但是，对自定义别名施加大小限制是合理的（并且通常是可取的），以确保我们拥有一致的 URL 数据库。假设用户可以为每个客户键指定最多 16 个字符（如上面的数据库架构中所反映的）。
 
-<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption><p>URL缩短高级系统设计</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption><p>URL缩短高级系统设计</p></figcaption></figure>
 
 ### 7、数据分区和复制
 
@@ -277,7 +277,7 @@ KGS 还必须确保不要将相同的密钥提供给多个服务器。为此，�
 
 **如何更新每个缓存副本？**每当缓存未命中时，我们的服务器就会访问后端数据库。每当发生这种情况时，我们都可以更新缓存并将新条目传递给所有缓存副本。每个副本都可以通过添加新条目来更新其缓存。如果副本已经有该条目，它可以简单地忽略它。
 
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption><p>访问缩短URL的请求流程</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption><p>访问缩短URL的请求流程</p></figcaption></figure>
 
 
 
@@ -305,7 +305,7 @@ Round Robin LB 的一个问题是我们没有考虑服务器负载。如果服�
 * 删除过期链接后，我们可以将密钥放回密钥数据库中以供重复使用。
 * 我们是否应该删除在一段时间内（比如六个月）未访问过的链接？这可能很棘手。由于存储变得越来越便宜，我们可以决定永远保持链接。
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>URL缩短的详细组件设计</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>URL缩短的详细组件设计</p></figcaption></figure>
 
 ### 11、 Telemetry
 

@@ -63,7 +63,7 @@ Instagram 是一种社交网络服务，它的用户可以上传并与其他用�
 
 在高层次上，我们需要支持两种场景，一种是上传照片，另一种是查看/搜索照片。我们的服务需要一些[对象存储](https://en.wikipedia.org/wiki/Object\_storage)服务器来存储照片，还需要一些数据库服务器来存储有关照片的元数据信息。
 
-<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption><p>高级系统设计</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption><p>高级系统设计</p></figcaption></figure>
 
 ### 6、数据库设计
 
@@ -71,7 +71,7 @@ Instagram 是一种社交网络服务，它的用户可以上传并与其他用�
 
 我们需要存储有关用户、他们上传的照片以及他们关注的人的数据。照片表将存储与照片相关的所有数据；我们需要在 (PhotoID, CreationDate) 上有一个索引，因为我们需要先获取最近的照片。
 
-<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption><p>数据库设计</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption><p>数据库设计</p></figcaption></figure>
 
 存储上述模式的一种直接方法是使用像Mysql这样的RDBMS，因为我们需要连接（Join）。但是关系数据库也带来了挑战，尤其是当我们需要扩展它们时。有关详细信息，请查看[SQL与NOSQL](https://github.com/FangZzzzz/grokking\_system\_design/blob/master/System%20Design%20Problems)。
 
@@ -129,7 +129,7 @@ PhotoID (4 bytes) + UserID (4 bytes) + PhotoPath (256 bytes) + PhotoLatitude (4 
 
 分离照片的读取和写入请求还将允许我们独立地扩展和优化这些操作中的每一个。
 
-<figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption><p>组件设计</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>组件设计</p></figcaption></figure>
 
 ### 9、 可靠性和冗余性
 
@@ -141,7 +141,7 @@ PhotoID (4 bytes) + UserID (4 bytes) + PhotoPath (256 bytes) + PhotoLatitude (4 
 
 在系统中创建冗余可以消除单点故障，并在危机中需要时提供备份或备用功能。例如，如果同一服务的两个实例在生产中运行，其中一个发生故障或降级，则系统可以故障转移到健康副本。故障转移可以自动发生，也可以需要人工干预。
 
-<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption><p>可靠性和冗余性</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption><p>可靠性和冗余性</p></figcaption></figure>
 
 ### 10、数据分片
 

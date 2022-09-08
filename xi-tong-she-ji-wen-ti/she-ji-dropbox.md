@@ -77,7 +77,7 @@
 
 如下图所示，块服务器将与客户端一起从云存储上传/下载文件，元数据服务器将在 SQL 或 NoSQL 数据库中更新文件的元数据。同步服务器将处理通知所有客户端有关同步的不同更改的工作流。
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>高级设计</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>高级设计</p></figcaption></figure>
 
 ### 6、组件设计
 
@@ -112,7 +112,7 @@
 3. **Watcher**将监视本地工作空间文件夹，并将用户执行的任何操作（例如，当用户创建、删除或更新文件或文件夹时）通知Indexer（如下所述）。Watcher 还监听同步服务广播的其他客户端上发生的任何更改。
 4. **Indexer**将处理从 Watcher 接收到的事件，并使用有关已修改文件块的信息更新内部元数据数据库。一旦块成功提交/下载到云存储，索引器将与远程同步服务通信，将更改广播到其他客户端并更新远程元数据数据库。
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>客户端设计</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>客户端设计</p></figcaption></figure>
 
 ###
 
@@ -148,13 +148,13 @@
 
 消息队列服务将在我们的系统中实现两种类型的队列。请求队列是一个全局队列，所有客户端都将共享它。客户端更新元数据数据库的请求将首先发送到请求队列，同步服务将从那里更新元数据。对应于各个订阅客户端的响应队列负责将更新消息传递给每个客户端。由于客户端收到消息后会从队列中删除，因此我们需要为每个订阅的客户端创建单独的响应队列以共享更新消息。
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>消息队列</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>消息队列</p></figcaption></figure>
 
 #### e、云/快存储
 
 [云/块存储](https://cloudacademy.com/blog/object-storage-block-storage/)存储用户上传的文件块。客户端直接与存储交互以从中发送和接收对象。元数据与存储的分离使我们能够使用云中或内部的任何存储。
 
-<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption><p>组件设计</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption><p>组件设计</p></figcaption></figure>
 
 ### 7、文件处理工作流程
 
