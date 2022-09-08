@@ -59,11 +59,11 @@ Instagram 是一种社交网络服务，它的用户可以上传并与其他用�
 400GB * 365* 10~= 1425TB
 ```
 
-### 5、 总体系统设计（High level design ，HLD）
+### 5、 高层次系统设计（High level design ，HLD）
 
 在高层次上，我们需要支持两种场景，一种是上传照片，另一种是查看/搜索照片。我们的服务需要一些[对象存储](https://en.wikipedia.org/wiki/Object\_storage)服务器来存储照片，还需要一些数据库服务器来存储有关照片的元数据信息。
 
-<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption><p>总体系统设计（High level design ，HLD）</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption><p>高层次系统设计（High level design ，HLD）</p></figcaption></figure>
 
 ### 6、数据库设计
 

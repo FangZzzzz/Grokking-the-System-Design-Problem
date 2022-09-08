@@ -65,13 +65,13 @@ FavoriteTweets: UserID, TweetID, Timestamp
 
 我们应该使用哪个数据库系统？像[Cassandra](https://en.wikipedia.org/wiki/Apache\_Cassandra)这样的NoSQL会最适合我们的需求，还是我们应该使用类似MySQL的解决方案？我们应该使用什么样的块存储来存储照片和视频？
 
-### 第5步：总体设计（High level design ，HLD）
+### 第5步：高层次设计（High level design ，HLD）
 
 用5-6个方框画出方框图，代表我们系统的核心组件。我们应该确定从端到端解决实际问题所需要的足够组件。
 
 对于Twitter，在较高层级上，我们将需要多个应用程序服务器来服务所有读/写请求，并在他们前面使用负载均衡服务器来分配流量。如果我们假设我们将有更多的读取流量（与写入相比），我们可以决定使用单独的服务器来处理这些场景（读写分离）。在后端，我们需要一个高效的数据库来存储所有推文并支持大量读取。我们还需要一个分布式文件存储系统来存储照片和视频。
 
-<figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption><p>总体设计（High level design ，HLD）</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption><p>高层次设计（High level design ，HLD）</p></figcaption></figure>
 
 ### 第6步：详细设计
 
