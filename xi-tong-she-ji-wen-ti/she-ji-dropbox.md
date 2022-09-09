@@ -77,7 +77,7 @@
 
 如下图所示，块服务器将与客户端一起从云存储上传/下载文件，元数据服务器将在 SQL 或 NoSQL 数据库中更新文件的元数据。同步服务器将处理通知所有客户端有关同步的不同更改的工作流。
 
-<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>高层次设计（High level design ，HLD）</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>高层次设计（High level design ，HLD）</p></figcaption></figure>
 
 ### 6、组件设计
 

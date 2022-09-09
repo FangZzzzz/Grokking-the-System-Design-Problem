@@ -85,11 +85,11 @@ Facebook Messenger是一款向用户提供基于文本的即时消息服务的�
 4. 用户 B 接收到消息并将确认发送到服务器。
 5. 服务器通知User-A消息已成功传递给User-B。
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>发送消息的请求流程</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>发送消息的请求流程</p></figcaption></figure>
 
 ### 5、详细的组件设计
 
@@ -179,7 +179,7 @@ Facebook Messenger是一款向用户提供基于文本的即时消息服务的�
 \
 
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption><p>Facebook messenger的详细组件设计</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption><p>Facebook messenger的详细组件设计</p></figcaption></figure>
 
 **设计总结：** 客户端会打开与聊天服务器的连接来发送消息；然后服务器会将其传递给请求的用户。所有活动用户都将与服务器保持连接以接收消息。每当有新消息到达时，聊天服务器都会在长轮询请求中将其推送给接收用户。消息可以存储在 HBase 中，它支持快速小更新和基于范围的搜索。服务器可以将用户的在线状态广播给其他相关用户。客户端可以以较低频率为在客户端视口中可见的用户提取状态更新。\
 
