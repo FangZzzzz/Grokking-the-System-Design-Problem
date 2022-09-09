@@ -155,7 +155,7 @@ deletePaste(apiDevKey, apiPasteKey)
 
 在高层次上，我们需要一个应用层来服务所有的读写请求。应用层将与存储层对话以存储和检索数据。我们可以将我们的存储层与一个数据库隔离，该数据库存储与每个粘贴、用户等相关的元数据，而另一个将粘贴内容存储在一些对象存储中（如[Amazon S3](https://en.wikipedia.org/wiki/Amazon\_S3)）。这种数据划分也将允许我们单独扩展它们。
 
-<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption><p>高层次设计（High level design ，HLD）</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8) (1).png" alt=""><figcaption><p>高层次设计（High level design ，HLD）</p></figcaption></figure>
 
 ### 8、组件设计
 
@@ -180,7 +180,7 @@ deletePaste(apiDevKey, apiPasteKey)
 1. 元数据数据库：我们可以使用 MySQL 等关系数据库或 Dynamo 或 Cassandra 等分布式键值存储。
 2. 对象存储：我们可以将我们的内容存储在像 Amazon 的 S3 这样的对象存储中。每当我们想要达到内容存储的全部容量时，我们可以通过添加更多服务器轻松增加容量。
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption><p>组件设计</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption><p>组件设计</p></figcaption></figure>
 
 ### 9、 清除或数据库清理
 

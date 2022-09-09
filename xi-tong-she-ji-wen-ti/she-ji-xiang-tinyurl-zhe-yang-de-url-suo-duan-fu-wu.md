@@ -183,7 +183,7 @@ deleteURL(apiDevKey, urlKey)
 
 \\
 
-<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption><p>数据库设计</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (1).png" alt=""><figcaption><p>数据库设计</p></figcaption></figure>
 
 我们应该使用什么样的数据库？由于我们预计存储数10亿行，并且我们不需要使用对象之间的关系——像[DynamoDB](https://en.wikipedia.org/wiki/Amazon\_DynamoDB)、[Cassandra](https://en.wikipedia.org/wiki/Apache\_Cassandra)或[Riak](https://en.wikipedia.org/wiki/Riak)这样的NoSql存储是更好的选择。NoSQL选择也更容易扩展。有关详细信息，请参阅[SQL 与 NoSQL ](https://www.educative.io/collection/page/5668639101419520/5649050225344512/5728116278296576/)。
 
@@ -214,7 +214,23 @@ deleteURL(apiDevKey, urlKey)
 
 另一种解决方案可能是将用户 ID（应该是唯一的）附加到输入 URL。但是，如果用户尚未登录，我们将不得不要求用户选择唯一性密钥。即使在这之后，如果我们有冲突，我们必须继续生成一个密钥，直到我们得到一个唯一的。
 
-<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption><p>URL缩短请求流程</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
 #### b、离线生成密钥
 
@@ -300,7 +316,7 @@ Round Robin LB 的一个问题是我们没有考虑服务器负载。如果服�
 * 删除过期链接后，我们可以将密钥放回密钥数据库中以供重复使用。
 * 我们是否应该删除在一段时间内（比如六个月）未访问过的链接？这可能很棘手。由于存储变得越来越便宜，我们可以决定永远保持链接。
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>URL缩短的详细组件设计</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>URL缩短的详细组件设计</p></figcaption></figure>
 
 ### 11、 Telemetry
 
