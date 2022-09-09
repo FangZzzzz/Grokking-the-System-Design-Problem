@@ -77,7 +77,7 @@
 
 如下图所示，块服务器将与客户端一起从云存储上传/下载文件，元数据服务器将在 SQL 或 NoSQL 数据库中更新文件的元数据。同步服务器将处理通知所有客户端有关同步的不同更改的工作流。
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>高层次设计（High level design ，HLD）</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>高层次设计（High level design ，HLD）</p></figcaption></figure>
 
 ### 6、组件设计
 
@@ -148,7 +148,7 @@
 
 消息队列服务将在我们的系统中实现两种类型的队列。请求队列是一个全局队列，所有客户端都将共享它。客户端更新元数据数据库的请求将首先发送到请求队列，同步服务将从那里更新元数据。对应于各个订阅客户端的响应队列负责将更新消息传递给每个客户端。由于客户端收到消息后会从队列中删除，因此我们需要为每个订阅的客户端创建单独的响应队列以共享更新消息。
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>消息队列</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (2).png" alt=""><figcaption><p>消息队列</p></figcaption></figure>
 
 #### e、云/快存储
 
