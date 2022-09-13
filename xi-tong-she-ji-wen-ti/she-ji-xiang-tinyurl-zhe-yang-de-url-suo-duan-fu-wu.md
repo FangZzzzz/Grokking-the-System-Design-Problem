@@ -145,23 +145,35 @@ URL缩短用户优化跨设备的链接、跟踪单个链接以分析受众和�
 
 我们可以使用SOAP或REST API来公开我们的服务的功能。以下可能是用户创建和删除URL的API定义：
 
+{% code overflow="wrap" %}
 ```
-createURL(apiDevKey, originalURL, customAlias=None, userName=None, expireDate=None)
+createURL(api_dev_key, original_url, custom_alias=None, user_name=None, expire_date=None)
 ```
+{% endcode %}
 
-**参数：** apiDevKey (string)：注册账号的API开发者密钥。除其他外，这将用于根据分配的配额限制用户。 originalURL (string)：要缩短的原始 URL。 customAlias (string)：URL 的可选自定义键。 userName (string)：在编码中使用的可选用户名。 expireDate (string)：缩短 URL 的可选过期日期。
+**参数：**&#x20;
+
+api\_dev\_key(string)：注册账号的API开发者密钥。除其他外，这将用于根据分配的配额限制用户。&#x20;
+
+original\_url(string)：要缩短的原始 URL。&#x20;
+
+custom\_alias(string)：URL 的可选自定义键。&#x20;
+
+user\_name(string)：在编码中使用的可选用户名。&#x20;
+
+expire\_date(string)：缩短 URL 的可选过期日期。
 
 **返回：(string)**
 
 成功插入返回缩短的URL；否则，它会返回错误代码。
 
 ```
-deleteURL(apiDevKey, urlKey)
+deleteURL(api_dev_key, url_key)
 ```
 
 其中“url\_key”是表示要检索的缩短 URL 的字符串。成功删除会返回“URL Removed”。
 
-\*我们如何发现和防止滥用？\*恶意用户可以通过使用当前设计中的所有URL键使我们破产。为了防止滥用，我们可以通过他们的apiDevKey限制用户。每个apiDevKey可以限制为每个时间段内特定数量的URL创建和重定向。（每个开发者密钥可以设置为不同的持续时间）。
+**我们如何发现和防止滥用？**恶意用户可以通过使用当前设计中的所有URL键使我们破产。为了防止滥用，我们可以通过他们的apiDevKey限制用户。每个apiDevKey可以限制为每个时间段内特定数量的URL创建和重定向。（每个开发者密钥可以设置为不同的持续时间）。
 
 ### 5、数据库设计
 
@@ -181,8 +193,6 @@ deleteURL(apiDevKey, urlKey)
 
 我们需要两张表：一张用户存储有关URL映射的信息，另一张用于创建端链接的用户数据。
 
-\\
-
 <figure><img src="../.gitbook/assets/image (10) (1).png" alt=""><figcaption><p>数据库设计</p></figcaption></figure>
 
 我们应该使用什么样的数据库？由于我们预计存储数10亿行，并且我们不需要使用对象之间的关系——像[DynamoDB](https://en.wikipedia.org/wiki/Amazon\_DynamoDB)、[Cassandra](https://en.wikipedia.org/wiki/Apache\_Cassandra)或[Riak](https://en.wikipedia.org/wiki/Riak)这样的NoSql存储是更好的选择。NoSQL选择也更容易扩展。有关详细信息，请参阅[SQL 与 NoSQL ](https://www.educative.io/collection/page/5668639101419520/5649050225344512/5728116278296576/)。
@@ -191,7 +201,7 @@ deleteURL(apiDevKey, urlKey)
 
 我们在这里解决的问题是，如何为给定的URL生成一个简短且唯一的密钥。
 
-在第1节的TinyURL示例中，缩短的 URL 是“ [http://tinyurl.com/jlg8zpc”。这个](http://tinyurl.com/jlg8zpc%E2%80%9D%E3%80%82%E8%BF%99%E4%B8%AA) URL 的最后七个字符是我们要生成的短键。我们将在这里探索两种解决方案：
+在第1节的TinyURL示例中，缩短的 URL 是“ http://tinyurl.com/jlg8zpc“。这个 URL 的最后七个字符是我们要生成的短键。我们将在这里探索两种解决方案：
 
 #### a、编码实际URL
 
@@ -290,7 +300,7 @@ KGS 还必须确保不要将相同的密钥提供给多个服务器。为此，�
 
 **如何更新每个缓存副本？**每当缓存未命中时，我们的服务器就会访问后端数据库。每当发生这种情况时，我们都可以更新缓存并将新条目传递给所有缓存副本。每个副本都可以通过添加新条目来更新其缓存。如果副本已经有该条目，它可以简单地忽略它。
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption><p>访问缩短URL的请求流程</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9) (1).png" alt=""><figcaption><p>访问缩短URL的请求流程</p></figcaption></figure>
 
 ### 9、负载均衡服务器（LB）
 

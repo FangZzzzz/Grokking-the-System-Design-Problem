@@ -113,24 +113,38 @@ Pastebin 与[URL Shortening 服务](https://www.educative.io/collection/page/566
 
 我们可以使用 SOAP 或 REST API 来公开我们服务的功能。以下可能是用于创建/检索/删除粘贴的 API 的定义：
 
+{% code overflow="wrap" %}
 ```
-addPaste(apiDevKey, pasteData, customUrl=None userName=None, pasteName=None, expireDate=None)
+addPaste(api_dev_key, paste_data, custom_url=None user_name=None, paste_name=None, expire_date=None)
 ```
+{% endcode %}
 
-**参数：** apiDevKey(string)：注册账号的API开发者密钥。除其他外，这将用于根据分配的配额限制用户。 pasteData(string)：粘贴的文本数据。 customUrl(string)：可选的自定义 URL。 userName(string)：用于生成 URL 的可选用户名。 pasteName(string)：粘贴的可选名称 expireDate(string)：粘贴的可选到期日期。
+参数：&#x20;
+
+api\_dev\_key(string)：注册账号的API开发者密钥。除其他外，这将用于根据分配的配额限制用户。&#x20;
+
+paste\_data(string)：粘贴的文本数据。&#x20;
+
+custom\_url(string)：可选的自定义 URL。&#x20;
+
+user\_name(string)：用于生成 URL 的可选用户名。&#x20;
+
+paste\_name(string)：粘贴的可选名称&#x20;
+
+expire\_date(string)：粘贴的可选到期日期。
 
 **返回：**(string) 插入成功返回可以访问粘贴的 URL，否则将返回错误代码。
 
 同样，我们可以检索和删除粘贴 API：
 
 ```
-getPaste(apiDevJey, apiPasteKey)
+getPaste(api_dev_key, api_paste_key)
 ```
 
 其中“apiPasteKey”是一个字符串，表示要检索的粘贴的粘贴键。此 API 将返回粘贴的文本数据。
 
 ```
-deletePaste(apiDevKey, apiPasteKey)
+deletePaste(api_dev_key, api_paste_key)
 ```
 
 成功删除返回“True”，否则返回“False”。
@@ -184,16 +198,16 @@ deletePaste(apiDevKey, apiPasteKey)
 
 ### 9、 清除或数据库清理
 
-请参阅[设计像TinyURL这样的URL缩短服务](https://github.com/FangZzzzz/grokking\_system\_design/blob/master/System%20Design%20Problems/Designing%20a%20URL%20Shortening%20service%20like%20TinyURL.md)。
+请参阅[设计像TinyURL这样的URL缩短服务](she-ji-xiang-tinyurl-zhe-yang-de-url-suo-duan-fu-wu.md)。
 
 ### 10、数据分区和复制
 
-请参阅[设计像TinyURL这样的URL缩短服务](https://github.com/FangZzzzz/grokking\_system\_design/blob/master/System%20Design%20Problems/Designing%20a%20URL%20Shortening%20service%20like%20TinyURL.md)。
+请参阅[设计像TinyURL这样的URL缩短服务](she-ji-xiang-tinyurl-zhe-yang-de-url-suo-duan-fu-wu.md)。
 
 ### 11、缓存和负载均衡器
 
-请参阅[设计像TinyURL这样的URL缩短服务](https://github.com/FangZzzzz/grokking\_system\_design/blob/master/System%20Design%20Problems/Designing%20a%20URL%20Shortening%20service%20like%20TinyURL.md)。
+请参阅[设计像TinyURL这样的URL缩短服务](she-ji-xiang-tinyurl-zhe-yang-de-url-suo-duan-fu-wu.md)。
 
 ### 12、 安全和权限
 
-请参阅[设计像TinyURL这样的URL缩短服务](https://github.com/FangZzzzz/grokking\_system\_design/blob/master/System%20Design%20Problems/Designing%20a%20URL%20Shortening%20service%20like%20TinyURL.md)。
+请参阅[设计像TinyURL这样的URL缩短服务](she-ji-xiang-tinyurl-zhe-yang-de-url-suo-duan-fu-wu.md)。

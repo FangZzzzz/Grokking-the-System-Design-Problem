@@ -29,7 +29,7 @@ Instagram 是一种社交网络服务，它的用户可以上传并与其他用�
 
 1. 我们的服务需要高可用。
 2. 系统可接受的动态消息生成延迟为 200 毫秒。
-3. 如果用户一段时间没有到拉取照片，一致性收到影响（为了可用性），这是可以接受的。
+3. 如果用户一段时间没有到读到照片，一致性收到影响（为了可用性），这是可以接受的。
 4. 系统应该是高可靠的；任何上传的照片或视频都不应丢失。
 
 **不在范围内：**为照片添加标签、在标签上搜索照片、评论照片、将用户标记到照片、关注谁等。
@@ -71,7 +71,7 @@ Instagram 是一种社交网络服务，它的用户可以上传并与其他用�
 
 我们需要存储有关用户、他们上传的照片以及他们关注的人的数据。照片表将存储与照片相关的所有数据；我们需要在 (PhotoID, CreationDate) 上有一个索引，因为我们需要先获取最近的照片。
 
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption><p>数据库设计</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13) (1).png" alt=""><figcaption><p>数据库设计</p></figcaption></figure>
 
 存储上述模式的一种直接方法是使用像Mysql这样的RDBMS，因为我们需要连接（Join）。但是关系数据库也带来了挑战，尤其是当我们需要扩展它们时。有关详细信息，请查看[SQL与NOSQL](https://github.com/FangZzzzz/grokking\_system\_design/blob/master/System%20Design%20Problems)。
 
@@ -129,7 +129,7 @@ PhotoID (4 bytes) + UserID (4 bytes) + PhotoPath (256 bytes) + PhotoLatitude (4 
 
 分离照片的读取和写入请求还将允许我们独立地扩展和优化这些操作中的每一个。
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>组件设计</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption><p>组件设计</p></figcaption></figure>
 
 ### 9、 可靠性和冗余性
 

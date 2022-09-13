@@ -41,15 +41,15 @@
 定义系统预期的API。不仅可以建立一个精确的符合系统预期的合约，而且可以保证我们没有弄错任何需求。我们类似Twitter的服务的接口定义例子：
 
 ```
-PostTweet(userID, tweetData, tweetLocation, userLocation, timestamp, ...)
+postTweet(user_id, tweet_data, tweet_location, user_location, timestamp, ...)  
 ```
 
 ```
-GenerateTimeline(userID, currentTime, userLocation, ...)
+generateTimeline(user_id, current_time, user_location, ...)  
 ```
 
 ```
-MarkTweetFavorite(userID, tweetID, timestamp, ...)
+markTweetFavorite(user_id, tweet_id, timestamp, …)
 ```
 
 ### 第4步：定义数据模型
@@ -59,8 +59,8 @@ MarkTweetFavorite(userID, tweetID, timestamp, ...)
 ```
 User: UserID, Name, Email, DoB, CreationData, LastLogin, etc.
 Tweet: TweetID, Content, TweetLocation, NumberOfLikes, TimeStamp, etc.
-UserFollow: UserID1, UserID2
-FavoriteTweets: UserID, TweetID, Timestamp
+UserFollowo: UserdID1, UserID2
+FavoriteTweets: UserID, TweetID, TimeStamp
 ```
 
 我们应该使用哪个数据库系统？像[Cassandra](https://en.wikipedia.org/wiki/Apache\_Cassandra)这样的NoSQL会最适合我们的需求，还是我们应该使用类似MySQL的解决方案？我们应该使用什么样的块存储来存储照片和视频？
