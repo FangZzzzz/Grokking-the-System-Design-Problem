@@ -39,7 +39,7 @@
 
 ### 3、一些设计考虑
 
-Pastebin 与[设计像TinyURL这样的URL缩短服务](she-ji-xiang-tinyurl-zhe-yang-de-url-suo-duan-fu-wu.md)有一些相同的要求，但我们应该牢记一些额外的设计注意事项。
+Pastebin 与[URL Shortening 服务](https://www.educative.io/collection/page/5668639101419520/5649050225344512/5668600916475904)有一些相同的要求，但我们应该牢记一些额外的设计注意事项。
 
 **用户一次可以粘贴的文本量应该是多少？**我们可以限制用户不要拥有大于 10MB 的粘贴，以阻止滥用服务。
 
