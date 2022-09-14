@@ -85,7 +85,7 @@ Facebook Messenger是一款向用户提供基于文本的即时消息服务的�
 4. 用户 B 接收到消息并将确认发送到服务器。
 5. 服务器通知User-A消息已成功传递给User-B。
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
@@ -166,7 +166,7 @@ Facebook Messenger是一款向用户提供基于文本的即时消息服务的�
 
 **客户端应该如何有效地从服务器获取数据？**客户端在从服务器获取数据时应该分页。对于不同的客户端，页面大小可能不同，例如，手机屏幕较小，因此我们需要在视口中进行较少数量的消息/对话。
 
-#### c、管理用户状态 
+#### c、管理用户状态
 
 我们需要跟踪用户的在线/离线状态，并在状态发生变化时通知所有相关用户。由于我们在服务器上为所有活动用户维护了一个连接对象，因此我们可以很容易地从中找出用户的当前状态。任何时候都有 500M 的活跃用户，如果我们必须将每个状态变化广播给所有相关的活跃用户，将会消耗大量资源。我们可以围绕这个做以下优化：
 
