@@ -112,7 +112,7 @@
 3. **Watcher**将监视本地工作空间文件夹，并将用户执行的任何操作（例如，当用户创建、删除或更新文件或文件夹时）通知Indexer（如下所述）。Watcher 还监听同步服务广播的其他客户端上发生的任何更改。
 4. **Indexer**将处理从 Watcher 接收到的事件，并使用有关已修改文件块的信息更新内部元数据数据库。一旦块成功提交/下载到云存储，索引器将与远程同步服务通信，将更改广播到其他客户端并更新远程元数据数据库。
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>客户端设计</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>客户端设计</p></figcaption></figure>
 
 ###
 
