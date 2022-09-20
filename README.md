@@ -15,3 +15,4 @@
 * [设计 Twitter](xi-tong-she-ji-wen-ti/she-ji-twitter.md)
 * [设计 Youtube 或 Netflix](xi-tong-she-ji-wen-ti/she-ji-youtube-huo-netflix.md)
 * [设计 Typeahead Suggestion](xi-tong-she-ji-wen-ti/she-ji-typeahead-suggestion.md)
+* [设计 API Rate Limiter](xi-tong-she-ji-wen-ti/she-ji-api-rate-limiter.md)

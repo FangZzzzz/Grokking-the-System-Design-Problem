@@ -1,5 +1,7 @@
 # 设计 Typeahead Suggestion
 
+## 设计 Typeahead Suggestion
+
 让我们设计一个实时建议服务，在用户输入文字进行搜索时向他们推荐术语。
 
 类似的服务：Auto-suggestions, Typeahead search
@@ -47,7 +49,7 @@ Typeahead Suggestion使用户能够搜索已知和经常搜索的术语。当用
 \
 
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 **我们应该有不区分大小写的 trie 吗？**为简单起见和搜索用例，我们假设我们的数据不区分大小写。
 
@@ -88,7 +90,7 @@ Typeahead Suggestion使用户能够搜索已知和经常搜索的术语。当用
 \
 
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 \
 如果我们将这个 trie 存储在具有上述方案的文件中，我们将有：“C2,A2,R1,T,P,O1,D”。由此，我们可以轻松地重建我们的 trie。

@@ -141,7 +141,7 @@ PhotoID (4 bytes) + UserID (4 bytes) + PhotoPath (256 bytes) + PhotoLatitude (4 
 
 在系统中创建冗余可以消除单点故障，并在危机中需要时提供备份或备用功能。例如，如果同一服务的两个实例在生产中运行，其中一个发生故障或降级，则系统可以故障转移到健康副本。故障转移可以自动发生，也可以需要人工干预。
 
-<figure><img src="../.gitbook/assets/image (14) (1).png" alt=""><figcaption><p>可靠性和冗余性</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (14) (1) (1).png" alt=""><figcaption><p>可靠性和冗余性</p></figcaption></figure>
 
 ### 10、数据分片
 

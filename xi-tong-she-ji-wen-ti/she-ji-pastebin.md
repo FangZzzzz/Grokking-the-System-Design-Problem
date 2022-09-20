@@ -161,7 +161,7 @@ deletePaste(api_dev_key, api_paste_key)
 
 我们需要两张表，一张用于存储有关粘贴的信息，另一张用于存储用户数据。
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption><p>数据库设计</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption><p>数据库设计</p></figcaption></figure>
 
 这里，'URlHash' 是 TinyURL 的 URL 等价物，'ContentKey' 是对存储粘贴内容的外部对象的引用；我们将在本章后面讨论粘贴内容的外部存储。
 

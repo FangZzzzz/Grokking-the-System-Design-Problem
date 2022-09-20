@@ -115,7 +115,7 @@ media\_ids (number\[])：与推文关联的可选 media\_id 列表。（所有�
 \
 
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>高层次系统设计</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (2).png" alt=""><figcaption><p>高层次系统设计</p></figcaption></figure>
 
 尽管我们预期的每日写入负载为 1 亿条，读取负载为 280 亿条推文。这意味着我们的系统平均每秒将收到大约 1160 条新推文和 325K 读取请求。该流量将在一天中不均匀地分布，但是，在高峰时间我们应该预计每秒至少有几千个写入请求和大约 1M 的读取请求。在设计系统架构时，我们应该牢记这一点。
 
@@ -126,7 +126,7 @@ media\_ids (number\[])：与推文关联的可选 media\_id 列表。（所有�
 我们需要存储有关用户、他们的推文、他们最喜欢的推文以及他们关注的人的数据。\
 
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>数据库模式</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (2).png" alt=""><figcaption><p>数据库模式</p></figcaption></figure>
 
 要在 SQL 和 NoSQL 数据库之间选择存储上述模式，请参阅[设计 Instagram](she-ji-instagram.md)下的“数据库模式” 。
 
@@ -175,7 +175,7 @@ media\_ids (number\[])：与推文关联的可选 media\_id 列表。（所有�
 \
 
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9) (2).png" alt=""><figcaption></figcaption></figure>
 
 我们需要 31 位来存储这个数字。由于我们平均期望每秒有 1150 条新推文，我们可以分配 17 位来存储自动递增的序列；这将使我们的 TweetID 长 48 位。因此，我们每秒可以存储 (2^17 => 130K) 条新推文。我们可以每秒重置我们的自动递增序列。为了容错和更好的性能，我们可以有两台数据库服务器为我们生成自增键，一台生成偶数键，另一台生成奇数键。
 
@@ -211,7 +211,7 @@ media\_ids (number\[])：与推文关联的可选 media\_id 列表。（所有�
 
 我们的缓存就像一个哈希表，其中“key”是“OwnerID”，“value”是一个双向链表，其中包含该用户在过去三天内的所有推文。由于我们想首先检索最新的数据，我们总是可以在链表的头部插入新的推文，这意味着所有较旧的推文都将在链表的尾部附近。因此，我们可以从尾部删除推文，为更新的推文腾出空间。
 
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption><p>缓存</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13) (2).png" alt=""><figcaption><p>缓存</p></figcaption></figure>
 
 ### 9、时间线生成
 

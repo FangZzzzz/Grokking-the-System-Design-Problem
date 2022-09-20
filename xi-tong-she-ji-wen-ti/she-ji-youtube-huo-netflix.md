@@ -1,5 +1,7 @@
 # 设计 Youtube 或 Netflix
 
+## 设计 Youtube 或 Netflix
+
 让我们设计一个像 Youtube 这样的视频共享服务，用户可以在其中上传/查看/搜索视频。
 
 类似服务：netflix.com、vimeo.com、dailymotion.com、veoh.com&#x20;
@@ -133,7 +135,7 @@ codec（string）和resolution（string）：我们应该从客户端发送 API 
 5. **用户数据库：**用于存储用户的信息，例如姓名、电子邮件、地址等。
 6. **视频元数据存储：**一个元数据数据库，用于存储有关视频的所有信息，如标题、系统中的文件路径、上传用户、总观看次数、喜欢、不喜欢等。它还将用于存储所有视频评论。
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Youtube的高层次设计</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Youtube的高层次设计</p></figcaption></figure>
 
 ### 6、数据库模式
 
