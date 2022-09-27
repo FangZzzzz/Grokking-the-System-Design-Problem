@@ -140,7 +140,7 @@ Rate Limiter 将负责决定 API 服务器将处理哪个请求以及拒绝哪�
 2. 计算排序集中的元素总数。如果此计数大于我们的限制“3”，则拒绝请求。
 3. 在排序集中插入当前时间并接受请求。
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (3).png" alt=""><figcaption></figcaption></figure>
 
 **我们需要多少内存来存储滑动窗口的所有用户数据？**假设“UserID”占用 8 bytes。每个纪元时间将需要 4 bytes。假设我们需要每小时 500 个请求的速率限制。让我们假设哈希表有 20 bytes的开销，排序集有 20 bytes的开销。最大时，我们总共需要 12KB 来存储一个用户的数据：
 
