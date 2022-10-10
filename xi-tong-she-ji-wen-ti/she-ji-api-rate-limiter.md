@@ -68,7 +68,7 @@
 \
 
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 **滚动窗口算法：**在此算法中，时间窗口是从发出请求的时间加上时间窗口长度的一部分来考虑的。例如，如果在一秒的第 300 毫秒和第 400 毫秒发送了两条消息，我们将从该秒的第 300 毫秒到下一秒的第 300 毫秒将它们计为两条消息。在上图中，每秒保持两条消息，我们将限制“m3”和“m4”。
 
@@ -170,7 +170,7 @@ Rate Limiter 将负责决定 API 服务器将处理哪个请求以及拒绝哪�
 \
 
 
-<figure><img src="../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 **我们需要多少内存来存储带有计数器的滑动窗口的所有用户数据？**假设“UserID”占用 8 bytes。每个纪元时间需要 4 bytes，计数器需要 2 bytes。假设我们需要每小时 500 个请求的速率限制。假设哈希表的开销为 20 bytes，Redis 哈希的开销为 20 bytes。由于我们将记录每分钟，因此每个用户最多需要 60 个条目。我们总共需要 1.6KB 来存储一个用户的数据：
 

@@ -39,7 +39,7 @@ Typeahead Suggestion使用户能够搜索已知和经常搜索的术语。当用
 \
 
 
-<figure><img src="../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 现在如果用户输入了'cap'，我们的服务可以遍历trie 去节点'P' 找到所有以这个前缀开头的词（例如，cap-tion、cap-ital 等）。
 

@@ -103,7 +103,7 @@ Web 的两个重要特征使 Web 爬网成为一项非常困难的任务：
 \
 
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ### 6、详细的组件设计
 
