@@ -16,3 +16,4 @@
 * [设计 API Rate Limiter](xi-tong-she-ji-wen-ti/she-ji-api-rate-limiter.md)
 * [设计 Twitter 搜索](xi-tong-she-ji-wen-ti/she-ji-twitter-sou-suo.md)
 * [设计网络爬虫](xi-tong-she-ji-wen-ti/she-ji-wang-luo-pa-chong.md)
+* [设计Facebook’s Newsfeed](xi-tong-she-ji-wen-ti/she-ji-facebooks-newsfeed.md)

@@ -121,7 +121,7 @@ Web 的两个重要特征使 Web 爬网成为一项非常困难的任务：
 \
 
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
 让我们一一讨论这些组件，看看它们如何分布到多台机器上：
 

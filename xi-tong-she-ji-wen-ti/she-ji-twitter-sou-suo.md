@@ -68,7 +68,7 @@ page\_token（string）：此令牌将指定结果集中应返回的页面。
 
 在高层次上，我们需要将所有状态存储在数据库中，并建立一个索引来跟踪哪个单词出现在哪个推文中。该索引将帮助我们快速找到用户尝试搜索的推文。
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption><p>Twitter搜索的高级设计</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (3).png" alt=""><figcaption><p>Twitter搜索的高级设计</p></figcaption></figure>
 
 
 
