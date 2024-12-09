@@ -2,7 +2,7 @@
 
 * [探索系统问题](README.md)
 
-## ☀ 系统设计问题
+## ☀️ 系统设计问题
 
 * [系统设计-分步指南](xi-tong-she-ji-wen-ti/xi-tong-she-ji-mian-shi-fen-bu-zhi-nan.md)
 * [设计像TinyURL这样的URL缩短服务](xi-tong-she-ji-wen-ti/she-ji-xiang-tinyurl-zhe-yang-de-url-suo-duan-fu-wu.md)
